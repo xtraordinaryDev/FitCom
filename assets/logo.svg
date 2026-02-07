@@ -1,0 +1,7 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="120" height="120" rx="24" fill="#0B0B0B"/>
+  <circle cx="60" cy="60" r="44" stroke="#3CFF8A" stroke-width="4"/>
+  <path d="M36 68L60 34L84 68" stroke="#F4F1EA" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M46 78H74" stroke="#C8A96A" stroke-width="6" stroke-linecap="round"/>
+  <text x="60" y="104" text-anchor="middle" fill="#F4F1EA" font-family="Arial" font-size="12" letter-spacing="2">FIT</text>
+</svg>

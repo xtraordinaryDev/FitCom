@@ -1,0 +1,6 @@
+<svg width="300" height="140" viewBox="0 0 300 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="140" rx="16" fill="#0B0B0B"/>
+  <rect x="24" y="24" width="252" height="92" rx="12" fill="#141414" stroke="#C8A96A" stroke-width="2"/>
+  <text x="150" y="70" text-anchor="middle" fill="#F4F1EA" font-family="Arial" font-size="18" font-weight="700">Rooted</text>
+  <text x="150" y="94" text-anchor="middle" fill="#F4F1EA" font-family="Arial" font-size="16">Philanthropic</text>
+</svg>

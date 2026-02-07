@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apply | F.I.T.-COMM Challenge</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="nav-wrapper" id="top">
+      <nav class="nav">
+        <a class="logo" href="index.html">
+          <img src="assets/images/F.I.T.-Comm%20Challenge%20FINAL%202-01%20copy.svg" alt="F.I.T.-COMM Challenge logo" />
+          <span>F.I.T.-COMM</span>
+        </a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-links" id="nav-menu">
+          <a href="index.html#mission">Mission</a>
+          <a href="index.html#program">Program</a>
+          <a href="index.html#pillars">What You Get</a>
+          <a href="index.html#speakers">Coaches</a>
+          <a href="index.html#dates">Dates</a>
+          <a href="apply.html" class="nav-link-current">Apply</a>
+        </div>
+        <a class="btn btn-secondary nav-cta" href="apply.html">Reserve Your Spot</a>
+      </nav>
+      <div class="nav-drawer" aria-hidden="true">
+        <button type="button" class="nav-close" aria-label="Close menu">
+          <span aria-hidden="true">×</span>
+        </button>
+        <div class="nav-drawer-links">
+          <a href="index.html#mission">Mission</a>
+          <a href="index.html#program">Program</a>
+          <a href="index.html#pillars">What You Get</a>
+          <a href="index.html#speakers">Coaches</a>
+          <a href="index.html#sponsors">Partners</a>
+          <a href="index.html#dates">Dates</a>
+          <a href="index.html#results">Results</a>
+          <a class="btn btn-primary" href="apply.html">Apply Now</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section application-section application-page">
+        <div class="section-heading">
+          <p class="eyebrow">Request to Join</p>
+          <h2>The F.I.T.-COMM Challenge Application</h2>
+          <div class="program-overview-box">
+            <h3>Program Overview</h3>
+            <p>The F.I.T.-COMM Challenge is an eight-week holistic wellness and lifestyle initiative that integrates:</p>
+            <ul>
+              <li>Physical fitness training</li>
+              <li>Mental health and emotional well-being support</li>
+              <li>Nutrition education</li>
+              <li>Comprehensive physical health assessments</li>
+              <li>Community accountability and support</li>
+            </ul>
+            <p>The program will take place at <strong>The Mali Center</strong>, 576 Front Avenue, St. Paul.</p>
+            <p>The total cost is <strong>$150</strong>, fully reimbursed upon successful completion. Participants receive over <strong>$4,000</strong> worth of professional services.</p>
+            <p class="application-intro">Please answer the following questions honestly to help us assess readiness and commitment.</p>
+          </div>
+        </div>
+
+        <form class="application-form" id="fitcomm-application" action="#" method="post" novalidate>
+          <div class="form-errors-summary" id="form-errors-summary" role="alert" aria-live="polite" hidden></div>
+          <div class="form-block contact-block">
+            <h3 class="form-block-title">Contact Information</h3>
+            <div class="form-row">
+              <label for="full-name">Full name <span class="required">*</span></label>
+              <input type="text" id="full-name" name="full_name" required placeholder="Your full name" autocomplete="name" aria-describedby="full-name-error" />
+              <span class="field-error hidden" id="full-name-error" role="alert"></span>
+            </div>
+            <div class="form-row">
+              <label for="email">Email <span class="required">*</span></label>
+              <input type="email" id="email" name="email" required placeholder="you@example.com" autocomplete="email" aria-describedby="email-error" />
+              <span class="field-error hidden" id="email-error" role="alert"></span>
+            </div>
+            <div class="form-row">
+              <label for="phone">Phone number <span class="required">*</span></label>
+              <input type="tel" id="phone" name="phone" required placeholder="(555) 123-4567" autocomplete="tel" aria-describedby="phone-error" />
+              <span class="field-error hidden" id="phone-error" role="alert"></span>
+            </div>
+          </div>
+
+          <fieldset class="form-block" id="field-financial" aria-describedby="financial-error">
+            <legend class="form-block-title">1. Financial Commitment <span class="required">*</span></legend>
+            <p class="form-hint">Considering the program cost of $150 (fully reimbursed upon completion), would this upfront fee be a barrier to your participation?</p>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="financial_barrier" value="yes" required />
+                <span>Yes</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="financial_barrier" value="no" />
+                <span>No</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="financial_barrier" value="possibly" />
+                <span>Possibly</span>
+              </label>
+            </div>
+            <span class="field-error hidden" id="financial-error" role="alert"></span>
+          </fieldset>
+
+          <fieldset class="form-block" id="field-program" aria-describedby="program-error">
+            <legend class="form-block-title">2. Program Commitment <span class="required">*</span></legend>
+            <p class="form-hint">The challenge runs Saturday, April 4, 2026 through Saturday, May 30. Full participation includes attending three (3) in-person workouts per week at The F.I.T. Lab and completing at least 90% of all scheduled workouts. Can you commit to this?</p>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="program_commitment" value="yes" required />
+                <span>Yes</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="program_commitment" value="no" />
+                <span>No</span>
+              </label>
+            </div>
+            <span class="field-error hidden" id="program-error" role="alert"></span>
+          </fieldset>
+
+          <fieldset class="form-block" id="field-transport" aria-describedby="transport-error">
+            <legend class="form-block-title">3. Transportation <span class="required">*</span></legend>
+            <p class="form-hint">How do you plan to commute to weekly workouts? (Select at least one)</p>
+            <div class="checkbox-group">
+              <label class="checkbox-label">
+                <input type="checkbox" name="transport" value="drive" />
+                <span>Drive</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="transport" value="rideshare" />
+                <span>Rideshare (Uber, Lyft, etc.)</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="transport" value="carpool" />
+                <span>Carpool</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="transport" value="public" />
+                <span>Public transportation</span>
+              </label>
+              <label class="checkbox-label checkbox-other">
+                <input type="checkbox" name="transport" value="other" id="transport-other" />
+                <span>Other</span>
+                <input type="text" name="transport_other" placeholder="Please specify" class="inline-text" aria-label="Other transportation" />
+              </label>
+            </div>
+            <span class="field-error hidden" id="transport-error" role="alert"></span>
+          </fieldset>
+
+          <fieldset class="form-block" id="field-sessions" aria-describedby="sessions-error">
+            <legend class="form-block-title">4. Mental Health &amp; Nutrition Sessions <span class="required">*</span></legend>
+            <p class="form-hint">In addition to workouts, participants attend sessions with mental health professionals and a nutritionist (virtual, hybrid, or in person). Can you commit to at least 90% of these sessions?</p>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="sessions_commitment" value="yes" required />
+                <span>Yes</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="sessions_commitment" value="no" />
+                <span>No</span>
+              </label>
+            </div>
+            <span class="field-error hidden" id="sessions-error" role="alert"></span>
+          </fieldset>
+
+          <fieldset class="form-block" id="field-scheduling" aria-describedby="scheduling-error">
+            <legend class="form-block-title">5. Scheduling Availability <span class="required">*</span></legend>
+            <p class="form-hint">Are there specific days or times when you are unavailable? List them below, or write &quot;None&quot; if fully available.</p>
+            <div class="form-row">
+              <label for="scheduling" class="sr-only">Days or times unavailable</label>
+              <textarea id="scheduling" name="scheduling_unavailable" rows="4" required placeholder="e.g. Tuesday evenings, or None" aria-describedby="scheduling-error"></textarea>
+              <span class="field-error hidden" id="scheduling-error" role="alert"></span>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-block" id="field-motivation" aria-describedby="motivation-error">
+            <legend class="form-block-title">6. Motivation for Participation <span class="required">*</span></legend>
+            <p class="form-hint">Why do you want to participate in The F.I.T.-COMM Challenge? (Maximum 500 words)</p>
+            <div class="form-row">
+              <label for="motivation" class="sr-only">Your motivation</label>
+              <textarea id="motivation" name="motivation" rows="8" maxlength="3500" required placeholder="Share your goals and why this program matters to you." aria-describedby="motivation-error motivation-count"></textarea>
+              <span class="char-count" aria-live="polite"><span id="motivation-count">0</span> / 3500 characters</span>
+              <span class="field-error hidden" id="motivation-error" role="alert"></span>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-block" id="field-activity" aria-describedby="activity-error">
+            <legend class="form-block-title">7. Current Physical Activity Level <span class="required">*</span></legend>
+            <p class="form-hint">How would you describe your current level of physical activity?</p>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="activity_level" value="very_active" required />
+                <span>Very active</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="activity_level" value="moderately_active" />
+                <span>Moderately active</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="activity_level" value="occasionally_active" />
+                <span>Occasionally active</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="activity_level" value="not_active" />
+                <span>Not currently active</span>
+              </label>
+            </div>
+            <span class="field-error hidden" id="activity-error" role="alert"></span>
+          </fieldset>
+
+          <fieldset class="form-block" id="field-medical" aria-describedby="medical-error">
+            <legend class="form-block-title">8. Medical Considerations <span class="required">*</span></legend>
+            <p class="form-hint">Do you have any health conditions or physical limitations that could restrict your ability to safely participate in a fitness program?</p>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="medical_conditions" value="yes" required />
+                <span>Yes</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="medical_conditions" value="no" />
+                <span>No</span>
+              </label>
+            </div>
+            <p class="form-note">Participants must be medically cleared and will be required to complete a Physical Activity Readiness Questionnaire (PAR-Q).</p>
+            <span class="field-error hidden" id="medical-error" role="alert"></span>
+          </fieldset>
+
+          <fieldset class="form-block" id="field-clearance" aria-describedby="clearance-error">
+            <legend class="form-block-title">9. Medical Clearance <span class="required">*</span></legend>
+            <p class="form-hint">If required, would you be able to provide medical documentation confirming you are healthy enough to participate in a regular fitness program?</p>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="medical_clearance" value="yes" required />
+                <span>Yes</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="medical_clearance" value="no" />
+                <span>No</span>
+              </label>
+            </div>
+            <span class="field-error hidden" id="clearance-error" role="alert"></span>
+          </fieldset>
+
+          <fieldset class="form-block" id="field-reference" aria-describedby="ref-name-error ref-phone-error">
+            <legend class="form-block-title">10. Professional or Personal Reference <span class="required">*</span></legend>
+            <p class="form-hint">Please provide one person who can speak to your work ethic, reliability, and commitment to completing tasks.</p>
+            <div class="form-row">
+              <label for="ref-name">Reference name <span class="required">*</span></label>
+              <input type="text" id="ref-name" name="reference_name" required placeholder="Full name" aria-describedby="ref-name-error" />
+              <span class="field-error" id="ref-name-error" role="alert"></span>
+            </div>
+            <div class="form-row">
+              <label for="ref-phone">Reference phone number <span class="required">*</span></label>
+              <input type="tel" id="ref-phone" name="reference_phone" required placeholder="(555) 123-4567" aria-describedby="ref-phone-error" />
+              <span class="field-error hidden" id="ref-phone-error" role="alert"></span>
+            </div>
+          </fieldset>
+
+          <div class="form-incentives">
+            <p><strong>Additional incentives:</strong> Each participant receives a one-year membership to The St. Paul YMCA East Side, 875 Arcade Street. Two winners will be awarded $500 stipends at the end of the challenge based on level of engagement.</p>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Submit Application</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <img src="assets/images/F.I.T.-Comm%20Challenge%20FINAL%202-01%20copy.svg" alt="F.I.T.-COMM Challenge logo" />
+          <p>
+            A holistic wellness initiative designed for our community, by our community.
+          </p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/p/The-Mali-Center-61555847968254/" target="_blank" rel="noopener noreferrer" aria-label="The Mali Center on Facebook" class="footer-social-link">
+              <svg class="footer-social-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/themalicenter/?hl=en" target="_blank" rel="noopener noreferrer" aria-label="The Mali Center on Instagram" class="footer-social-link">
+              <svg class="footer-social-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>Partners</h4>
+          <p>The Mali Center · Rooted Philanthropic · Eastside YMCA</p>
+        </div>
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <p>576 Front Avenue, St. Paul, MN 55117</p>
+          <p><a href="mailto:info@fitcommchallenge.org">info@fitcommchallenge.org</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 F.I.T.-COMM Challenge. All rights reserved. <a href="terms.html">Terms of Service</a> · <a href="privacy.html">Privacy Policy</a></p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

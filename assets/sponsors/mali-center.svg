@@ -1,0 +1,5 @@
+<svg width="300" height="140" viewBox="0 0 300 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="140" rx="16" fill="#0B0B0B"/>
+  <rect x="24" y="24" width="252" height="92" rx="12" fill="#141414" stroke="#3CFF8A" stroke-width="2"/>
+  <text x="150" y="78" text-anchor="middle" fill="#F4F1EA" font-family="Arial" font-size="20" font-weight="700">The Mali Center</text>
+</svg>
