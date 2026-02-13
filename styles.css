@@ -339,6 +339,28 @@ body.nav-open .nav-drawer {
   height: 32px;
 }
 
+.schedule-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.schedule-list li {
+  color: var(--muted);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.schedule-day {
+  color: var(--off-white);
+  font-weight: 600;
+  min-width: 5.5rem;
+}
+
 /* Result cards with icons */
 .result-card {
   display: flex;
@@ -972,12 +994,8 @@ h1 {
   width: 100%;
   height: 240px;
   object-fit: cover;
-  object-position: center;
-  background: #1b1b1b;
-}
-
-.speaker-card img.speaker-img-top {
   object-position: top center;
+  background: #1b1b1b;
 }
 
 .speaker-body {
@@ -1000,9 +1018,24 @@ h1 {
   color: var(--off-white);
   padding: 1.5rem;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  overflow-y: auto;
   opacity: 0;
   transition: opacity 0.3s ease;
+}
+
+.speaker-detail p {
+  margin: 0 0 0.75rem;
+  line-height: 1.55;
+  font-size: 0.9rem;
+  text-align: left;
+  max-width: 100%;
+}
+
+.speaker-detail p:last-child {
+  margin-bottom: 0;
 }
 
 .speaker-card:hover .speaker-detail,
@@ -1059,6 +1092,19 @@ h1 {
   min-height: 100px;
 }
 
+.partnership-card-logo a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.partnership-card-logo a:hover,
+.partnership-card-logo a:focus {
+  opacity: 0.9;
+}
+
 .partnership-card-logo img {
   max-height: 64px;
   width: auto;
@@ -1071,9 +1117,33 @@ h1 {
 }
 
 .partnership-card-body h4 {
-  color: var(--off-white);
   font-size: 1.35rem;
   margin: 0 0 0.5rem;
+}
+
+.partnership-card-body h4 a {
+  color: var(--off-white);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.partnership-card-body h4 a:hover,
+.partnership-card-body h4 a:focus {
+  color: var(--brand-green);
+}
+
+.partnership-website-link {
+  color: var(--brand-green);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.partnership-website-link:hover,
+.partnership-website-link:focus {
+  color: var(--off-white);
+  text-decoration: underline;
 }
 
 .partnership-address {
@@ -1130,7 +1200,13 @@ h1 {
 }
 
 .partners-additional .partnership-heading {
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.partners-additional-hint {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0 0 1.25rem;
 }
 
 .sponsor-grid {
@@ -1162,19 +1238,61 @@ h1 {
   margin: 0 auto;
 }
 
+.partners-additional .sponsor-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+  cursor: pointer;
+  border-radius: var(--radius);
+  padding: 1rem;
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.partners-additional .sponsor-link:hover,
+.partners-additional .sponsor-link:focus {
+  transform: translateY(-4px);
+  border-color: rgba(60, 255, 138, 0.35);
+  outline: none;
+}
+
+.partners-additional .sponsor-link-img-wrap {
+  display: block;
+  flex: 0 0 auto;
+}
+
 .partners-additional .sponsor-grid img {
   filter: none;
   width: 100%;
   height: 100px;
-  padding: 1rem;
+  padding: 0.5rem;
   object-fit: contain;
   object-position: center;
+  display: block;
 }
 
-.partners-additional .sponsor-grid img:hover,
-.partners-additional .sponsor-grid img:focus {
+.partners-additional .sponsor-link-label {
+  display: block;
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--brand-green);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.partners-additional .sponsor-link:hover .sponsor-link-label,
+.partners-additional .sponsor-link:focus .sponsor-link-label {
+  color: var(--off-white);
+  text-decoration: underline;
+}
+
+.partners-additional .sponsor-link:hover img,
+.partners-additional .sponsor-link:focus img {
   filter: none;
-  transform: translateY(-4px);
 }
 
 @media (max-width: 640px) {
@@ -1189,6 +1307,72 @@ h1 {
 
 .results-grid {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+/* Eligibility section (residency requirement) */
+.eligibility .eligibility-box {
+  max-width: 640px;
+  margin: 0 auto;
+  background: var(--charcoal);
+  border: 1px solid rgba(60, 255, 138, 0.2);
+  border-radius: var(--radius);
+  padding: 1.75rem 2rem;
+}
+
+.eligibility-intro {
+  color: var(--off-white);
+  font-size: 1.05rem;
+  margin: 0 0 1.25rem;
+  line-height: 1.55;
+}
+
+.eligibility-details h4 {
+  color: var(--brand-green);
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0 0 0.75rem;
+}
+
+.eligibility-details ul {
+  margin: 0 0 1rem 1.25rem;
+  padding: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.eligibility-details li {
+  margin-bottom: 0.35rem;
+}
+
+.eligibility-details p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.application-eligibility {
+  margin-top: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: rgba(60, 255, 138, 0.06);
+  border-left: 3px solid var(--brand-green);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.application-eligibility h4 {
+  color: var(--brand-green);
+  font-size: 1rem;
+  margin: 0 0 0.5rem;
+}
+
+.application-eligibility p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--muted);
 }
 
 .final-cta {
