@@ -277,16 +277,59 @@ if (applicationForm) {
 
     const btn = applicationForm.querySelector('button[type="submit"]');
     const actions = applicationForm.querySelector(".form-actions");
-    btn.textContent = "Submitting…";
+    btn.textContent = "Preparing Email…";
     btn.disabled = true;
-    setTimeout(() => {
-      btn.textContent = "Submit Application";
-      btn.disabled = false;
-      const notice = document.createElement("p");
-      notice.className = "form-success";
-      notice.setAttribute("role", "status");
-      notice.textContent = "Thank you for applying to The F.I.T.-COMM Challenge. We will be in touch soon.";
-      applicationForm.insertBefore(notice, actions);
-    }, 800);
+
+    const formData = new FormData(applicationForm);
+    const getValue = (name) => (formData.get(name) || "").toString().trim();
+    const getValues = (name) =>
+      formData
+        .getAll(name)
+        .map((v) => v.toString().trim())
+        .filter(Boolean)
+        .join(", ");
+
+    const bodyLines = [
+      "F.I.T.-COMM Challenge Application",
+      `Submitted: ${new Date().toLocaleString()}`,
+      "",
+      "Contact Information",
+      `Full Name: ${getValue("full_name")}`,
+      `Email: ${getValue("email")}`,
+      `Phone: ${getValue("phone")}`,
+      "",
+      "Application Responses",
+      `Financial Barrier: ${getValue("financial_barrier")}`,
+      `Program Commitment: ${getValue("program_commitment")}`,
+      `Transportation: ${getValues("transport")}`,
+      `Sessions Commitment: ${getValue("sessions_commitment")}`,
+      `Scheduling Availability: ${getValue("scheduling")}`,
+      `Motivation: ${getValue("motivation")}`,
+      `Activity Level: ${getValue("activity_level")}`,
+      `Medical Conditions / Limitations: ${getValue("medical_conditions")}`,
+      `Medical Clearance: ${getValue("medical_clearance")}`,
+      "",
+      "Reference",
+      `Reference Name: ${getValue("reference_name")}`,
+      `Reference Phone: ${getValue("reference_phone")}`,
+    ];
+
+    const mailtoHref =
+      "mailto:fitcommchallenge@gmail.com" +
+      `?cc=${encodeURIComponent("x.thurman00@gmail.com")}` +
+      `&subject=${encodeURIComponent("F.I.T.-COMM Challenge Application Submission")}` +
+      `&body=${encodeURIComponent(bodyLines.join("\n"))}`;
+
+    window.location.href = mailtoHref;
+
+    btn.textContent = "Submit Application";
+    btn.disabled = false;
+    const existingNotice = applicationForm.querySelector(".form-success");
+    if (existingNotice) existingNotice.remove();
+    const notice = document.createElement("p");
+    notice.className = "form-success";
+    notice.setAttribute("role", "status");
+    notice.textContent = "Your email app should open with your completed application. Please review and send it to fitcommchallenge@gmail.com.";
+    applicationForm.insertBefore(notice, actions);
   });
 }

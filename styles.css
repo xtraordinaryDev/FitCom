@@ -998,6 +998,59 @@ h1 {
   background: #1b1b1b;
 }
 
+@media (max-width: 768px) {
+  /* Ensure full-page scroll works on mobile (avoid scroll trap) */
+  body {
+    touch-action: pan-y;
+    overflow-x: hidden;
+  }
+
+  main {
+    overflow: visible;
+  }
+
+  /* Prevent "black screen" – force reveal sections visible on mobile */
+  .section.reveal,
+  .hero.reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .section.pillars,
+  .section.pillars .pillar-grid {
+    overflow: visible;
+    touch-action: pan-y;
+  }
+
+  .speaker-card img {
+    object-fit: contain;
+    object-position: top center;
+    height: 280px;
+    background: #1b1b1b;
+  }
+
+  /* On mobile: show bio inline so the overlay doesn't block scrolling */
+  .speakers .speaker-card {
+    overflow: visible;
+  }
+
+  .speakers .speaker-detail {
+    position: static;
+    opacity: 1;
+    background: rgba(11, 11, 11, 0.95);
+    margin-top: 0;
+    max-height: none;
+    padding: 1.25rem 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .speakers .speaker-card:hover .speaker-detail,
+  .speakers .speaker-card:focus-within .speaker-detail {
+    opacity: 1;
+  }
+
+}
+
 .speaker-body {
   padding: 1.5rem;
 }
