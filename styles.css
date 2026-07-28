@@ -998,6 +998,19 @@ h1 {
   background: #1b1b1b;
 }
 
+.speaker-photo-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 240px;
+  background: #1b1b1b;
+  color: var(--brand-green);
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 4rem;
+  letter-spacing: 0.08em;
+}
+
 @media (max-width: 768px) {
   /* Ensure full-page scroll works on mobile (avoid scroll trap) */
   body {
@@ -1027,6 +1040,10 @@ h1 {
     object-position: top center;
     height: 280px;
     background: #1b1b1b;
+  }
+
+  .speaker-photo-fallback {
+    height: 280px;
   }
 
   /* On mobile: show bio inline so the overlay doesn't block scrolling */
