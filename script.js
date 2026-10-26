@@ -315,9 +315,8 @@ if (applicationForm) {
     ];
 
     const mailtoHref =
-      "mailto:fitcommchallenge@gmail.com" +
-      `?cc=${encodeURIComponent("x.thurman00@gmail.com")}` +
-      `&subject=${encodeURIComponent("F.I.T.-COMM Challenge Application Submission")}` +
+      "mailto:thefitcommchallenge@gmail.com" +
+      `?subject=${encodeURIComponent("F.I.T.-COMM Challenge Application Submission")}` +
       `&body=${encodeURIComponent(bodyLines.join("\n"))}`;
 
     window.location.href = mailtoHref;
@@ -329,7 +328,7 @@ if (applicationForm) {
     const notice = document.createElement("p");
     notice.className = "form-success";
     notice.setAttribute("role", "status");
-    notice.textContent = "Your email app should open with your completed application. Please review and send it to fitcommchallenge@gmail.com.";
+    notice.textContent = "Your email app should open with your completed application. Please review and send it to thefitcommchallenge@gmail.com.";
     applicationForm.insertBefore(notice, actions);
   });
 }
