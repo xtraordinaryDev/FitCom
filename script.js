@@ -332,3 +332,82 @@ if (applicationForm) {
     applicationForm.insertBefore(notice, actions);
   });
 }
+
+/* Community gallery lightbox (community.html) */
+(() => {
+  const triggers = Array.from(document.querySelectorAll(".gallery-trigger"));
+  const lightbox = document.querySelector(".lightbox");
+  if (!triggers.length || !lightbox) return;
+
+  const img = lightbox.querySelector(".lightbox-img");
+  const caption = lightbox.querySelector(".lightbox-caption");
+  const closeBtn = lightbox.querySelector(".lightbox-close");
+  const prevBtn = lightbox.querySelector(".lightbox-prev");
+  const nextBtn = lightbox.querySelector(".lightbox-next");
+  let index = 0;
+  let lastFocus = null;
+
+  const captionFor = (trigger) => {
+    const fig = trigger.closest(".gallery-item");
+    const cap = fig ? fig.querySelector("figcaption") : null;
+    if (!cap) return "";
+    const title = cap.querySelector("strong");
+    if (!title) return cap.textContent.trim();
+    const rest = Array.from(cap.childNodes)
+      .filter((node) => node !== title)
+      .map((node) => node.textContent)
+      .join("")
+      .trim();
+    return rest ? `${title.textContent.trim()} — ${rest}` : title.textContent.trim();
+  };
+
+  const show = (i) => {
+    index = (i + triggers.length) % triggers.length;
+    const trigger = triggers[index];
+    const thumb = trigger.querySelector("img");
+    img.src = trigger.dataset.full;
+    img.alt = thumb ? thumb.alt : "";
+    caption.textContent = captionFor(trigger);
+  };
+
+  const open = (i) => {
+    lastFocus = document.activeElement;
+    show(i);
+    lightbox.hidden = false;
+    document.body.classList.add("lightbox-open");
+    closeBtn.focus();
+  };
+
+  const close = () => {
+    lightbox.hidden = true;
+    document.body.classList.remove("lightbox-open");
+    img.removeAttribute("src");
+    if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
+  };
+
+  triggers.forEach((trigger, i) => trigger.addEventListener("click", () => open(i)));
+  closeBtn.addEventListener("click", close);
+  prevBtn.addEventListener("click", () => show(index - 1));
+  nextBtn.addEventListener("click", () => show(index + 1));
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) close();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (lightbox.hidden) return;
+    if (e.key === "Escape") close();
+    else if (e.key === "ArrowLeft") show(index - 1);
+    else if (e.key === "ArrowRight") show(index + 1);
+  });
+
+  let touchStartX = null;
+  lightbox.addEventListener("touchstart", (e) => {
+    touchStartX = e.touches[0].clientX;
+  }, { passive: true });
+  lightbox.addEventListener("touchend", (e) => {
+    if (touchStartX === null) return;
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 50) show(index + (dx < 0 ? 1 : -1));
+    touchStartX = null;
+  });
+})();
